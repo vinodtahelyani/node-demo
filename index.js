@@ -1,9 +1,6 @@
 var express = require('express');
-var mongoose=require('mongoose');
-
 
 const app=express();
-
 
 require("appdynamics").profile({
   controllerHostName: 'master-onprem-controller.e2e.appd-test.com',
@@ -13,12 +10,14 @@ require("appdynamics").profile({
   applicationName: 'GettingStarted',
   tierName: 'Tier3',
   nodeName: 'process' // The controller will automatically append the node name with a unique number
- });
- 
+});
 
 app.get('/', (req, res)=>{
     res.send('Hello world');
 });
 
+app.get('/getsomething-from master', (req, res)=>{
+// done by master 
+});
 
 app.listen(1800);
