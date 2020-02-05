@@ -20,4 +20,8 @@ app.get('/getsomething-from master', (req, res)=>{
 // done by master 
 });
 
+app.get('/getsomething', (req, res)=>{
+// done by someother user and not the master
+});
+
 app.listen(1800);
